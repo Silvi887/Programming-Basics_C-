@@ -1,0 +1,201 @@
+
+
+--1.Hello SoftUni
+using System;
+
+namespace ConsoleAppLab1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello SoftUni");
+        }
+    }
+}
+
+---2 Numbers from 1-10
+using System;
+
+namespace ConsoleAppLab1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            for(int i=1; i<=10; i++)
+            {
+                Console.WriteLine(i);
+            }
+            //Console.WriteLine("1");
+            //Console.WriteLine("2");
+            //Console.WriteLine("3");
+            //Console.WriteLine("4");
+            //Console.WriteLine("5");
+            //Console.WriteLine("6");
+            //Console.WriteLine("7");
+            //Console.WriteLine("8");
+            //Console.WriteLine("9");
+            //Console.WriteLine("10");
+
+
+
+
+
+        }
+    }
+}
+
+-----3.S of Rectangle Area
+using System;
+
+namespace ConsoleAppLab1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+
+            int S = a * b;
+            Console.WriteLine(S);
+
+
+
+
+        }
+    }
+}
+
+---4. From inces to cm
+using System;
+
+namespace ConsoleAppLab1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            double a = double.Parse(Console.ReadLine());
+            double bcm = a * 2.54;
+            Console.WriteLine(bcm);
+
+
+        }
+    }
+}
+
+--05  Greeting by Name
+using System;
+
+namespace ConsoleAppLab1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string name = Console.ReadLine();
+            Console.WriteLine($"Hello, {name}!");
+
+
+
+
+        }
+    }
+}
+
+---6.Concatenate Data
+using System;
+
+namespace ConsoleAppLab1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string FirstName = Console.ReadLine();
+            string LastName=Console.ReadLine();
+            int age= int.Parse(Console.ReadLine());
+            string town= Console.ReadLine();
+            Console.WriteLine($"You are {FirstName} {LastName}," +
+                $" a {age}-years old person from {town}.");
+
+        }
+    }
+}
+
+---07. Projects Creation
+using System;
+
+namespace _7.CreateProjects
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string nameArchitect = Console.ReadLine();
+            int CountProjects=int.Parse(Console.ReadLine());
+
+            int allhours = CountProjects*3;
+            Console.WriteLine($"The architect " +
+                $"{nameArchitect} will need {allhours} hours to complete {CountProjects} project/s.");
+
+
+
+        }
+    }
+}
+
+---08. PetShop
+using System;
+
+namespace PetShop
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+           
+            int countfooddogs=int.Parse(Console.ReadLine());
+            int countfoodcats= int.Parse(Console.ReadLine());
+
+            double fooddogs = countfooddogs * 2.5;
+            double foodcats = countfoodcats * 4;
+            double allfoodprice = fooddogs + foodcats;
+            Console.WriteLine($"{allfoodprice} lv.");
+
+
+        }
+    }
+}
+
+
+---09. Yard Greening
+using System;
+
+namespace Yard_Greening
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double kvmgreen = double.Parse(Console.ReadLine());
+
+            double pricewithoutdiscount = kvmgreen * 7.61;
+
+            double discount = pricewithoutdiscount * 0.18;
+
+
+            double pricewithdiscount = pricewithoutdiscount - discount;
+            Console.WriteLine($"The final price is: {pricewithdiscount} lv.");
+            Console.WriteLine($"The discount is: {discount} lv.");
+
+        }
+    }
+}
