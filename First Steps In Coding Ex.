@@ -1,0 +1,230 @@
+---1.USD to BGN
+using System;
+
+namespace FirstStepsInCodingExersises1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double dollar = double.Parse(Console.ReadLine());
+
+            double bglv = dollar * 1.79549;
+
+            Console.WriteLine(bglv);
+        }
+    }
+}
+
+--2.RadiansToDegree
+using System;
+
+namespace RadianstoDegrees
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            double radians = double.Parse(Console.ReadLine());
+
+            double degrees = (radians * 180) / Math.PI;
+            Console.WriteLine(degrees);
+        }
+    }
+}
+
+--3 Deposit Calculator
+using System;
+
+namespace DepositCalculator
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double sumdeposit= double.Parse(Console.ReadLine());
+            int termdeposit= int.Parse(Console.ReadLine());
+            double persent= double.Parse(Console.ReadLine());
+
+            //натрупана лихва
+            double interest = sumdeposit * persent/ 100;
+
+            //lihwa for 1 month
+            double interestonemonth = interest / 12;
+            double allsum = sumdeposit + interestonemonth * termdeposit;
+
+             Console.WriteLine(allsum);
+        }
+    }
+}
+
+--4.VacationBooks
+using System;
+
+namespace VacationBooks
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            int countpageinbook= int.Parse(Console.ReadLine());
+            int pageonehour= int.Parse(Console.ReadLine());
+            int dayscount= int.Parse(Console.ReadLine());
+
+            int timeforreading = countpageinbook / pageonehour;
+            int dayhoursreding = timeforreading / dayscount;
+
+            Console.WriteLine(dayhoursreding);
+
+
+        }
+    }
+}
+
+--5.SuppliesforSchool
+using System;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            int penscount = int.Parse(Console.ReadLine());
+            int pensilscount=int.Parse(Console.ReadLine());
+            int cleaningdergiant=int.Parse(Console.ReadLine());
+
+            int percentdiscount=int.Parse(Console.ReadLine());
+
+            double penssum = penscount * 5.80;
+            double pensilssum = pensilscount * 7.20;
+            double cleaningdergiantsum = cleaningdergiant * 1.20;
+
+            
+            double sumwithoutdiscount = penssum + pensilssum + cleaningdergiantsum;
+            double sumwithdiscount = sumwithoutdiscount -sumwithoutdiscount * percentdiscount) / 100;
+
+            Console.WriteLine(sumwithdiscount);
+
+        }
+    }
+}
+---6 Repainting
+using System;
+
+namespace Repainting
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int nylonneeded = int.Parse(Console.ReadLine());
+            int paintneeded = int.Parse(Console.ReadLine());
+            int thinnerpaint = int.Parse(Console.ReadLine());
+
+            int hoursforwork = int.Parse(Console.ReadLine());
+
+            ///
+            double sumnylon = (nylonneeded + 2) * 1.50;
+            double sumpaint = (1.10 *paintneeded) * 14.50;
+            double thinnerpaintsum = thinnerpaint * 5.00;
+
+            double allsummaterials = sumnylon + sumpaint + thinnerpaintsum + 0.40;
+            double summaystors = (allsummaterials * 0.3) * hoursforwork;
+
+            double resultsum = allsummaterials + summaystors;
+
+            Console.WriteLine(resultsum);
+        }
+    }
+}
+
+
+--7 Fooddelivery
+using System;
+
+namespace FoodDelivery3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int countchichen = int.Parse(Console.ReadLine());
+            int menufish = int.Parse(Console.ReadLine());
+            int veganmenu = int.Parse(Console.ReadLine());
+
+            double pricechikenmenues = countchichen * 10.35;
+            double pricemenufish = menufish * 12.40;
+            double priceveganmenues = veganmenu * 8.15;
+
+            double allbillmenues = pricechikenmenues + pricemenufish + priceveganmenues;
+
+            double desert = (20 * 0.01) * allbillmenues;
+
+            double billlast = allbillmenues + desert + 2.5;
+            Console.WriteLine(billlast);
+
+        }
+    }
+}
+
+
+
+---8 Basketball Equipment
+using System;
+
+namespace BasketballEquipment
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+           
+            int taxBasketball=int.Parse(Console.ReadLine());
+
+            double pricesneakers = taxBasketball * 0.60;
+            double pricefootballequipment = pricesneakers * 0.8;
+            double ballfootball = pricefootballequipment *0.25;//1/4 ot pricefootballequipment
+
+            double basketballaccessories = ballfootball * 0.2;//1/5 ot ballfootball 
+
+            double allforpay= taxBasketball+ pricesneakers+
+                pricefootballequipment+ ballfootball+ basketballaccessories;
+            Console.WriteLine(allforpay);
+        }
+    }
+}
+
+---9. Fish tank
+using System;
+
+namespace FishTank
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+           
+            int lenght= int.Parse(Console.ReadLine());
+            int width= int.Parse(Console.ReadLine());
+            int height= int.Parse(Console.ReadLine());
+
+            double persent = double.Parse(Console.ReadLine());
+
+            //// V in cm3
+            double Vofparalelepiped=lenght*width*height;
+
+            //V in liters
+            double Vinliters = Vofparalelepiped/1000; // * 0.001
+            double fullspace = persent /100 * Vinliters;
+
+  
+            double neededliters = Vinliters - fullspace;
+            Console.WriteLine(neededliters);
+        }
+    }
+}
