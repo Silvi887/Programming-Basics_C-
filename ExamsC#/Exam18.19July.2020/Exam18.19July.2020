@@ -1,1 +1,363 @@
 
+
+
+---01  Agency Profit
+
+using System;
+
+namespace Exam1819July2020
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string AirlineName = Console.ReadLine();
+            int cadulttickets= int.Parse(Console.ReadLine());   
+            int childticketscount= int.Parse(Console.ReadLine());   
+            double priceticketadults= double.Parse(Console.ReadLine()); 
+            double taxserve= double.Parse(Console.ReadLine());
+
+            //Calculations
+            double pricechildtickets = priceticketadults * 0.30;
+
+            double priceadultswithserve = priceticketadults + taxserve;
+            double childticketswithservetax = pricechildtickets + taxserve;
+
+
+            double finalprice = (priceadultswithserve * cadulttickets) + childticketswithservetax * childticketscount;
+
+            double winfromprice = 0.2 * finalprice;
+            Console.WriteLine($"The profit of your agency from {AirlineName} tickets is {winfromprice:F2} lv.");
+
+        }
+    }
+}
+
+
+
+
+
+---02 Add Bags
+using System;
+
+namespace AddBags
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+           
+
+            double priceluggageover20=double.Parse(Console.ReadLine()); 
+            double kgluggageg=double.Parse(Console.ReadLine()); 
+            int daystotrip=int.Parse(Console.ReadLine());
+            int countluggage=int.Parse(Console.ReadLine());
+
+
+            double addluggprice = 0.00;
+            //Calculations
+            if(kgluggageg<=10 && kgluggageg > 0)
+            {
+                addluggprice = 0.2 * priceluggageover20;
+            }
+            else if (kgluggageg >= 10 && kgluggageg <=20)
+            {
+                addluggprice = 0.5 * priceluggageover20;
+            }
+            else if (kgluggageg>20)
+            {
+                addluggprice = priceluggageover20;
+            }
+
+            //expensive price
+           if(daystotrip > 30)
+            {
+                addluggprice = addluggprice * 1.10;
+            }
+           else if (daystotrip >= 7 && daystotrip<=30)
+            {
+                addluggprice = addluggprice * 1.15;
+            }
+           else if (daystotrip<7)
+            {
+                addluggprice = addluggprice * 1.40;
+            }
+
+            double finalluggageprice = addluggprice * countluggage;
+
+            Console.WriteLine($" The total price of bags is: {finalluggageprice:F2} lv. ");
+
+        }
+    }
+}
+
+
+
+
+---03 Aluminum Joinery
+
+using System;
+
+namespace AluminiumJoinery
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int cJoinery = int.Parse(Console.ReadLine());
+            string typejoinery = Console.ReadLine();
+
+            string typedelivery = Console.ReadLine();
+
+
+            double price = 0.00;
+            switch (typejoinery)
+            {
+                case "90X130":
+                    price = 110;
+
+                    if (cJoinery > 30 && cJoinery <= 60)
+                    {
+                        price = price * 0.95;
+                    }
+                    else if (cJoinery > 60)
+                    {
+                        price = price * 0.92;
+
+                    }
+                    break;
+                case "100X150":
+                    price = 140;
+
+                    if (cJoinery > 40 && cJoinery <= 80)
+                    {
+                        price = price * 0.94;
+                    }
+                    else if (cJoinery > 80)
+                    {
+                        price = price * 0.90;
+                    }
+                    break;
+                case "130X180":
+                    price = 190;
+                    if (cJoinery > 20 && cJoinery <= 50)
+                    {
+                        price = price * 0.93;
+                    }
+                    else if (cJoinery > 50)
+                    {
+                        price = price * 0.88;
+                    }
+                    break;
+                case "200X300":
+                    price = 250;
+                    if (cJoinery > 25 && cJoinery <= 50)
+                    {
+                        price = price * 0.91;
+                    }
+                    else if (cJoinery > 50)
+                    {
+                        price = price * 0.86;
+                    }
+                    break;
+
+            }
+            double finalprice = price * cJoinery;
+           
+            if (typedelivery == "With delivery")
+            {
+                finalprice += 60;
+
+            }
+            //else if (typedelivery == "Without delivery")
+            //{
+                
+            //}
+            if (cJoinery > 99)
+            {
+                finalprice = finalprice * 0.96;
+            }
+            else if (cJoinery < 10)
+            {
+                Console.WriteLine("Invalid order");
+                return;
+            }
+
+            Console.WriteLine($"{finalprice:F2} BGN");
+
+        }
+
+
+
+
+
+
+    }
+}
+
+
+
+---04 Balls
+using System;
+
+namespace Balls
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+          
+            int countballs= int.Parse(Console.ReadLine());
+
+
+            //Calculations
+            string [] arr = new string[countballs];
+
+            for (int i=0; i<countballs; i++)
+            {
+                arr[i]= Console.ReadLine();
+            }
+
+            int countpoints = 0;
+            int cred = 0;
+            int corange = 0;
+            int cyellow = 0;
+            int cwhite = 0;
+            int cblack = 0;
+            int cothercolors = 0;
+
+
+            for (int m=0; m<arr.Length; m++)
+            {
+              
+                switch (arr[m])
+
+                {
+                    case "red" :
+                        countpoints += 5;
+                        cred += 1;
+
+                        break;
+
+
+                    case "orange":
+                        countpoints += 10;
+                        corange += 1;
+                        break;
+                    case "yellow":
+                        countpoints += 15;
+                        cyellow += 1;
+                        break;
+                    case "white":
+                        countpoints += 20;
+                        cwhite += 1;
+                        break;
+                    case "black":
+                        countpoints = countpoints/2;
+                         cblack += 1;
+                        break;
+                    default: { } break;
+
+
+                }
+                if (arr[m] != "red" && arr[m] != "orange" && arr[m] != "yellow" && arr[m] != "black" && arr[m] != "white")
+                {
+                    cothercolors += 1;
+                    continue; }
+
+               
+            }
+            Console.WriteLine($"Total points: {countpoints}");
+            Console.WriteLine($"Red balls: {cred}");
+            Console.WriteLine($"Orange balls: {corange}");
+            Console.WriteLine($"Yellow balls: {cyellow}");
+            Console.WriteLine($"White balls: {cwhite}");
+            Console.WriteLine($"Other colors picked: {cothercolors}");
+            Console.WriteLine($"Divides from black balls: {cblack}");
+
+        }
+    }
+}
+
+
+---05 Best Player
+using System;
+
+namespace BestPlayer
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            // string Nameplayer=Console.ReadLine();
+            //int countgoals= int.Parse(Console.ReadLine());
+
+
+            string Nameplayer = "";
+           int countgoals= 0;
+
+            string BestPlayer = "";
+            int bestscore = 0;
+            while ((Nameplayer= Console.ReadLine()) != "END")
+            {
+               
+                // Nameplayer = Console.ReadLine();
+                 countgoals = int.Parse(Console.ReadLine());
+              
+                if (countgoals > bestscore)
+                {
+                    BestPlayer = Nameplayer;
+                    bestscore = countgoals;
+                }
+                
+                if (countgoals>=10)
+                {
+                    break;
+                }
+
+                    //if (countgoals >= 3)
+                    //{
+                    //    Console.WriteLine($"{Nameplayer} is the best player!");
+
+                    //    Console.WriteLine($"He has scored {countgoals} goals and made a hat-trick !!!");
+
+                    //}
+                continue;
+            }
+
+            if (countgoals >= 3)
+            {
+                Console.WriteLine($"{BestPlayer} is the best player!");
+
+                Console.WriteLine($"He has scored {bestscore} goals and made a hat-trick !!!");
+
+            }
+            else
+            {
+                Console.WriteLine($"{BestPlayer} is the best player!");
+
+                Console.WriteLine($"He has scored {bestscore} goals.");
+            }
+
+
+
+            //Calcultions
+            //Console.WriteLine($"{Nameplayer} is the best player!");
+
+            //if (countgoals>=3)
+            //{
+            //    Console.WriteLine($"He has scored {countgoals} goals and made a hat-trick !!!");
+
+            //}
+            //else
+            //{
+            //    Console.WriteLine($"He has scored {countgoals} goals.");
+            //}
+
+        }
+    }
+}
+
+
+---06 Barcode Generator
